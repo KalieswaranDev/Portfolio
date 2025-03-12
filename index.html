@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./Image/k.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="k.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Preloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <svg viewBox="0 0 100 100">
+            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+                <!-- Left line -->
+                <path d="M 21 40 V 59">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 21 59; 180 21 59" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Right line -->
+                <path d="M 79 40 V 59">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 79 59; -180 79 59" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Top line -->
+                <path d="M 50 21 V 40">
+                    <animate attributeName="d" values="M 50 21 V 40; M 50 59 V 40" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Bottom line -->
+                <path d="M 50 60 V 79">
+                    <animate attributeName="d" values="M 50 60 V 79; M 50 98 V 79" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Top box -->
+                <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
+                    <animate attributeName="stroke" values="rgba(255,255,255,1); rgba(100,100,100,0)" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Middle box -->
+                <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z"/>
+                <!-- Bottom box -->
+                <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
+                    <animate attributeName="stroke" values="rgba(100,100,100,0); rgba(255,255,255,1)" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -19" dur="2s" repeatCount="indefinite"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Your Website Content -->
+    <div id="content">
+       
+    <div class="bg-[#0f0f0f] text-white">
+        <div class="bg-[#0f0f0f] text-white">
+            <!-- Unique Navigation -->
+            <nav class="fixed w-full top-0 z-50 px-4 py-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="relative bg-black/30 backdrop-blur-xl rounded-2xl border border-white/5 p-4">
+                        <div class="flex items-center justify-between">
+                            <!-- Animated Logo -->
+                            <div class="relative">
+                                <span class="text-2xl font-bold text-gradient">Kalieswaran.</span>
+                                <!-- <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#ff6b6b] rounded-full animate-ping"></div> -->
+                            </div>
+                            
+                            <!-- Mobile Menu Button -->
+                            <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+    
+                            <!-- Menu Items -->
+                            <div class="hidden md:flex items-center space-x-8">
+                                <a href="#home" class="group text-sm uppercase tracking-wider">
+                                    Home
+                                    <span class="block h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-[#ff6b6b]"></span>
+                                </a>
+                                <a href="#work" class="group text-sm uppercase tracking-wider">
+                                    Projects
+                                    <span class="block h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-[#ff6b6b]"></span>
+                                </a>
+                                <a href="#about" class="group text-sm uppercase tracking-wider">
+                                    About
+                                    <span class="block h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-[#ff6b6b]"></span>
+                                </a>
+                                <!-- <a href="#contact" class="group text-sm uppercase tracking-wider">
+                                    Contact
+                                    <span class="block h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-[#ff6b6b]"></span>
+                                </a> -->
+                                <button class="relative px-6 py-2 overflow-hidden group bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-lg">
+                                    <a href="mailto:kalies2328@email.com">
+                                        <span class="relative text-white font-medium">Let's Connect</span>
+                                    </a>
+                                    
+                                </button>
+                            </div>
+                        </div>
+    
+                        <!-- Mobile Menu -->
+                        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-[80%] h-screen bg-black/95 backdrop-blur-xl p-8 md:hidden">
+                            <div class="flex justify-end">
+                                <button onclick="toggleMenu()" class="text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex flex-col space-y-8 mt-8">
+                                <a href="#home" class="text-2xl font-bold" onclick="toggleMenu()">Home</a>
+                                <a href="#work" class="text-2xl font-bold" onclick="toggleMenu()">Projects</a>
+                                <a href="#about" class="text-2xl font-bold" onclick="toggleMenu()">About</a>
+                                <!-- <a href="#contact" class="text-2xl font-bold" onclick="toggleMenu()">Contact</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    
+            <!-- Innovative Hero Section -->
+            <section id="home" class="min-h-screen pt-32 pb-20 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-8">
+                            <div class="inline-flex items-center space-x-2 bg-white/5 rounded-full px-4 py-2">
+                                <span class="w-2 h-2 bg-[red] rounded-full animate-ping"></span>
+                               <a href="mailto:hello@example.com" class="text-sm">Available for Work</a> 
+
+                              
+                            </div>
+                            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                               Website & 
+                                <br/>
+                                Frontend 
+                                <br/>
+                                <span class="text-gradient"> Developer</span>
+                            </h1>
+                            <p class="text-lg text-zinc-400 max-w-md">
+                                Crafting digital experiences that merge creativity with functionality. 
+                                Let's build something extraordinary together.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <!-- Creative Grid Pattern -->
+                            <div class="grid grid-cols-4 gap-4 p-8">
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right w-8 h-8 text-[#ff6b6b]" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0z"/>
+                                      </svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ffd93d]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-[#ff6b6b]/10 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ff6b6b]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 h-8 text-[#ffd93d]">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
+                                      </svg>
+                                                                      </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ff6b6b]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-[#ffd93d]/10 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                 <a href="https://www.linkedin.com/in/kalieswaran-webdeveloper/"><h1 class="text-xl font-bold text-white-500 ">LINKEDIN</h1> </a>                             </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <a href="./Kalieswaran_resume.pdf" download="My_Resume.pdf"
+                                    class="text-xl font-bold text-white-500"><h1> RESUME</h1>
+                                    
+                                    
+                                 </a>                                   </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ffd93d]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ff6b6b]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+
+                                 <a href="https://www.upwork.com/freelancers/~0190534c00ef1e3014?mp_source=share"><h1 class="text-xl font-bold text-white-500">UPWORK</h1></a>                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-[#ff6b6b]/10 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    
+                                <a href="https://github.com/KalieswaranDev"   href><h1 class="text-xl font-bold text-white-500">GITHUB</h1></a>    
+                            
+                            
+                            </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ffd93d]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 h-8 text-[#ff6b6b]">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                      </svg>
+                                                                      </div>
+                                <div class="aspect-square bg-gradient-to-br from-[#ffd93d]/10 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ffd93d]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-[#ff6b6b]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                </div>
+                                <div class="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-lg hover-lift flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 h-8 text-[#ffd93d]">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+                                      </svg>
+                                                                      </div>
+                            </div>
+                            <!-- Floating Elements -->
+                            <div class="absolute top-10 right-10 w-20 h-20 bg-[#ff6b6b]/20 rounded-full blur-2xl"></div>
+                            <div class="absolute bottom-10 left-10 w-32 h-32 bg-[#ffd93d]/20 rounded-full blur-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Marquee Banner -->
+                <div class="relative mt-20 py-8 bg-white/5 overflow-hidden">
+                    <div class="marquee-wrapper hidden md:block">
+                        <div class="marquee whitespace-nowrap">
+                            <span class="mx-4 text-4xl font-bold text-white-500">SKILLS :</span>
+                            <span class="mx-4 text-4xl font-bold">SHOPIFY</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">HTML</span>
+                            <span class="mx-4 text-4xl font-bold">CSS</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">WORDPRESS</span>
+                            <span class="mx-4 text-4xl font-bold">JAVASCRIPT</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">MYSQL</span>
+                            <span class="mx-4 text-4xl font-bold">GITHUB</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">GIT</span>
+                            <span class="mx-4 text-4xl font-bold">TAILWIND CSS</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">BOOTSTRAP</span>
+                            <span class="mx-4 text-4xl font-bold">REACT(BASIC)</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">AI</span>
+                            <span class="mx-4 text-4xl font-bold">GITHUB</span>
+                            <span class="mx-4 text-4xl font-bold text-gradient">GIT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skillss">
+                    <!-- ✅ Clean and aligned layout for mobile -->
+                    <div class="text-left my-4  p-4">
+                        <span class="text-[#ff6b6b] text-sm uppercase tracking-wider"> What I know !</span>
+                        <h2 class="text-4xl font-bold mt-2 mb-16">SKILLS</h2>
+                        <div class="skills-list flex flex-wrap gap-3 justify-left overflow-x-auto ">
+                            <span class="text-lg font-medium">HTML</span>
+                            <span class="text-lg font-medium">Shopify</span>
+                            <span class="text-lg font-medium">CSS</span>
+                            <br>
+                            <span class="text-lg font-medium">WordPress</span>
+                            <span class="text-lg font-medium">JavaScript</span>
+                            <span class="text-lg font-medium">GitHub</span>
+                            <br>
+                            <span class="text-lg font-medium">Git</span>
+                            <span class="text-lg font-medium">Tailwind CSS</span>
+                          
+                            <span class="text-lg font-medium">Bootstrap</span>
+                            <br>
+                            <span class="text-lg font-medium">AI</span>
+                            <span class="text-lg font-medium">React(Basic)</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            </section>
+    
+            <!-- Unique Work Section -->
+            <section id="work" class="py-20 custom-shape bg-zinc-900">
+                <div class="max-w-7xl mx-auto px-4 mb-16">
+                    <div class="mb-8">
+                        <span class="text-[#ff6b6b] text-sm uppercase tracking-wider"> Projects</span>
+                        <h2 class="text-4xl font-bold mt-2">Works In Below!</h2>
+                    </div>
+                    
+                    <!-- Staggered Grid -->
+                    <div class="grid md:grid-cols-4 gap-8 ">
+                        <!-- Project Card 1 -->
+                        <div class="group relative h-[600px] bg-black rounded-2xl overflow-hidden hover-lift">
+                            <img src="./Image/Saltearth.jpg" 
+                                 alt="Project Alpha" 
+                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 z-10"></div>
+                            <div class="absolute bottom-8 left-8 z-20">
+                                <h3 class="text-2xl font-bold mb-2">Salt Earth</h3>
+                                <p class="text-zinc-400 mb-4">Web Development & <br>Maintanance</p>
+                                <a href="https://thesaltearth.com/" class="inline-flex items-center space-x-2 text-[#0173b5] group-hover:text-white transition-colors duration-300">
+                                    <span>View Website</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 2 (Offset) -->
+                        <div class="group relative h-[600px] bg-black rounded-2xl overflow-hidden hover-lift mt-12 md:mt-24">
+                            <img src="./Image/Hero.jpg" 
+                                 alt="Project Beta" 
+                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 z-10"></div>
+                            <div class="absolute bottom-8 left-8 z-20">
+                                <h3 class="text-2xl font-bold mb-2">Project Akaon</h3>
+                                <p class="text-zinc-400 mb-4">Landing PaGe For <br> Nft Collection</p>
+                                <a href="https://kalieswarandev.github.io/akaon./" class="inline-flex items-center space-x-2 text-[#0173b5] group-hover:text-white transition-colors duration-300">
+                                    <span>Check The website</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                                  <!-- Project Card 3 -->
+                                  <div class="group relative h-[600px] bg-black rounded-2xl overflow-hidden hover-lift">
+                                    <img src="./Image/Deniva.png" 
+                                         alt="Project Alpha" 
+                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 z-10"></div>
+                                    <div class="absolute bottom-8 left-8 z-20">
+                                        <h3 class="text-2xl font-bold mb-2">Deniva</h3>
+                                        <p class="text-zinc-400 mb-4">Web For Ecommerce Brandt</p>
+                                        <a href="https://www.upwork.com/freelancers/~0190534c00ef1e3014?p=1892494582051287040" class="inline-flex items-center space-x-2 text-[#0173b5] group-hover:text-white transition-colors duration-300">
+                                            <span>View Case Study</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="group relative h-[600px] bg-black rounded-2xl overflow-hidden hover-lift mt-12 md:mt-24">
+                                    <img src="./Image/Email.png" 
+                                         alt="Project Beta" 
+                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 z-10"></div>
+                                    <div class="absolute bottom-8 left-8 z-20">
+                                        <h3 class="text-2xl font-bold mb-2">Email Templete</h3>
+                                        <p class="text-zinc-400 mb-4">Email Marketing Templete</p>
+                                        <a href="https://kalieswarandev.github.io/Emailtemplete/" class="inline-flex items-center space-x-2 text-[#0173b5] group-hover:text-white transition-colors duration-300">
+                                            <span>link</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- About Section with Diagonal Layout -->
+            <section id="about" class=" relative">
+                <div class="diagonal-box bg-[#0173b5]/5 py-32">
+                    <div class="diagonal-content max-w-7xl mx-auto px-4">
+                        <div class="grid md:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 class="text-4xl font-bold mb-8">Crafting Engaging Web Experiences</h2>
+                                <p class="text-zinc-400 mb-8">
+                                    With a passion for clean and responsive design, I create high-performance websites using Shopify, WordPress, and modern front-end frameworks
+                                </p>
+                                <div class="grid grid-cols-2 gap-8">
+                                    <div class="hover-lift">
+                                        <h3 class="text-4xl font-bold text-gradient mb-2">1+</h3>
+                                        <p class="text-sm text-zinc-400">Years Experience</p>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                            <div class="space-y-8">
+                                <!-- Skill Bars with Animation -->
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>Website Development</span>
+                                        <span class="text-[#0173b5]">80%</span>
+                                    </div>
+                                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                                        <div class="h-full w-[80%] bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>Landing Page Development</span>
+                                        <span class="text-[#0173b5]">75%</span>
+                                    </div>
+                                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                                        <div class="h-full w-[75%] bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>Shopify Development</span>
+                                        <span class="text-[#0173b5]">90%</span>
+                                    </div>
+                                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                                        <div class="h-full w-[90%] bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>Wordpress Development</span>
+                                        <span class="text-[#0173b5]">65%</span>
+                                    </div>
+                                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                                        <div class="h-full w-[65%] bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-sm">
+                                        <span>SEO & Performance Optimization</span>
+                                        <span class="text-[#0173b5]">75%</span>
+                                    </div>
+                                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                                        <div class="h-full w-[75%] bg-gradient-to-r from-[#040268] to-[#0173b5] rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Contact Section
+            <section id="contact" class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="bg-zinc-900/50 rounded-3xl p-12 backdrop-blur-xl border border-white/5">
+                        <div class="grid md:grid-cols-2 gap-16">
+                            <div>
+                                <span class="text-[#ff6b6b] text-sm uppercase tracking-wider">Contact</span>
+                                <h2 class="text-4xl font-bold mt-2 mb-8">Let's create together</h2>
+                                <p class="text-zinc-400 mb-8">
+                                    Have a project in mind? Let's discuss how we can bring your vision to life.
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 rounded-full bg-[#ff6b6b]/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ff6b6b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <a href="mailto:hello@example.com" class="text-zinc-400 hover:text-white transition-colors">
+                                            hello@example.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="space-y-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm">Name</label>
+                                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-[#ff6b6b] transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm">Email</label>
+                                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-[#ff6b6b] transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm">Message</label>
+                                    <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-[#ff6b6b] transition-colors"></textarea>
+                                </div>
+                                <button class="w-full bg-gradient-to-r from-[#ff6b6b] to-[#ffd93d] text-black font-medium py-3 rounded-lg hover:opacity-90 transition-opacity">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+    
+            <!-- Footer -->
+            <footer class="py-12 border-t border-white/5">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="mb-8 md:mb-0">
+                            <span class="text-2xl font-bold text-gradient">Kalieswaran.</span>
+                        </div>
+                        <div class="flex space-x-6">
+                            <a href="https://www.upwork.com/freelancers/~0190534c00ef1e3014?mp_source=share" class="text-zinc-400 hover:text-white transition-colors">Upwork</a>
+                            <a href="www.linkedin.com/in/kalieswaran-webdeveloper" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                            <a href="https://github.com/KalieswaranDev" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </footer>
+        </div>
+    </div>
+ 
+    <script src="./k.js"></script>
+    </div>
+
+    
+</body>
+</html>
+
