@@ -96,8 +96,8 @@
 
 /* Adjust preloader size */
 #preloader svg {
-    width: 120px; /* Adjust size */
-    height: 120px;
+    width: 320px; /* Adjust size */
+    height: 320px;
 }
 
 /* Hide preloader smoothly when loaded */
@@ -162,8 +162,8 @@ body.loaded #content {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 152px;
-    height: 150px;
+    width: 72px;
+    height: 72px;
     margin-left: -36px;
     margin-top: -36px;
   }
