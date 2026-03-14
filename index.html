@@ -85,7 +85,8 @@
 
                                 <!-- Mobile Menu -->
                                 <div id="mobileMenu"
-                                    class="mobile-menu fixed top-0 right-0 w-[80%] h-screen bg-black/95 backdrop-blur-xl p-8 md:hidden">
+                                    class="mobile-menu fixed top-0 right-0 w-[80%] h-screen bg-black/95 backdrop-blur-xl p-8 md:hidden transform translate-x-full transition-transform duration-300">
+
                                     <div class="flex justify-end">
                                         <button onclick="toggleMenu()" class="text-white">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -95,12 +96,13 @@
                                             </svg>
                                         </button>
                                     </div>
+
                                     <div class="flex flex-col space-y-8 mt-8">
                                         <a href="#home" class="text-2xl font-bold" onclick="toggleMenu()">Home</a>
                                         <a href="#work" class="text-2xl font-bold" onclick="toggleMenu()">Projects</a>
                                         <a href="#about" class="text-2xl font-bold" onclick="toggleMenu()">About</a>
-                                        <!-- <a href="#contact" class="text-2xl font-bold" onclick="toggleMenu()">Contact</a> -->
                                     </div>
+
                                 </div>
                             </div>
                         </div>
